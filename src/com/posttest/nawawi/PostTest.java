@@ -9,6 +9,7 @@ public class PostTest {
         // Inisiasi variabel
         String namaPetugas, namaPelanggan, kodeTujuan, kodePaket, tanggalKeberangkatan;
         float harga = 0, biayaPajak = 0, totalBiaya = 0;
+        boolean ulangi;
 
         // Bagian Input
         System.out.println("===> Struk Pembayaran Terminal Jaya <===\n");
@@ -16,10 +17,34 @@ public class PostTest {
         namaPetugas = read.nextLine();
         System.out.print("Masukkan Nama Pelangan\t\t\t\t\t: ");
         namaPelanggan = read.nextLine();
-        System.out.print("Masukkan Kode Tujuan (JGJ, SMR, JKT)\t: ");
-        kodeTujuan = read.nextLine().toUpperCase();
-        System.out.print("Masukkan Kode Paket (S / K / R)\t\t\t: ");
-        kodePaket = read.nextLine().toUpperCase();
+
+        do {
+            ulangi = true;
+
+            System.out.print("Masukkan Kode Tujuan (JGJ, SMR, JKT)\t: ");
+            kodeTujuan = read.nextLine().toUpperCase();
+
+            if (kodeTujuan.equals("JGJ") || kodeTujuan.equals("SMR") || kodeTujuan.equals("JKT")) {
+                ulangi = false;
+            } else {
+                System.out.println("[EROR] Kode Tujuan tidak dikenali!\n");
+            }
+        } while (ulangi);
+
+        do {
+            ulangi = true;
+
+            System.out.print("Masukkan Kode Paket (S / K / R)\t\t\t: ");
+            kodePaket = read.nextLine().toUpperCase();
+
+            if (kodePaket.equals("S") || kodePaket.equals("K") || kodePaket.equals("R")) {
+                ulangi = false;
+            } else {
+                System.out.println("[EROR] Kode Tujuan tidak dikenali!\n");
+            }
+        } while (ulangi);
+
+
         System.out.print("Masukkan Tanggal Keberangkatan\t\t\t: ");
         tanggalKeberangkatan = read.nextLine();
 
