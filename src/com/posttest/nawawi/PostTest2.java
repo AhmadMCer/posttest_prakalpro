@@ -7,7 +7,7 @@ public class PostTest2 {
         Scanner read = new Scanner(System.in);
 
         // Inisiasi variabel
-        String namaPetugas, namaPelanggan, kodeTujuan = "", kodePaket = "", tanggalKeberangkatan, input;
+        String namaPetugas, namaPelanggan, kodeTujuan, kodePaket, tanggalKeberangkatan;
         float harga = 0, biayaPajak = 0, totalBiaya = 0;
         boolean ulangi;
 
@@ -22,19 +22,12 @@ public class PostTest2 {
             ulangi = true;
 
             System.out.print("Masukkan Kode Tujuan (JGJ, SMR, JKT)\t: ");
-            input = read.nextLine().toUpperCase();
+            kodeTujuan = read.nextLine().toUpperCase();
 
-            switch (input) {
+            switch (kodeTujuan) {
                 case "JGJ":
-                    kodeTujuan = "JGJ";
-                    ulangi = false;
-                    break;
                 case "SMR":
-                    kodeTujuan = "SMR";
-                    ulangi = false;
-                    break;
                 case "JKT":
-                    kodeTujuan = "JKT";
                     ulangi = false;
                     break;
                 default:
@@ -46,19 +39,12 @@ public class PostTest2 {
             ulangi = true;
 
             System.out.print("Masukkan Kode Paket (S / K / R)\t\t\t: ");
-            input = read.nextLine().toUpperCase();
+            kodePaket = read.nextLine().toUpperCase();
 
-            switch (input) {
+            switch (kodePaket) {
                 case "S":
-                    kodePaket = "S";
-                    ulangi = false;
-                    break;
                 case "K":
-                    kodePaket = "K";
-                    ulangi = false;
-                    break;
                 case "R":
-                    kodePaket = "R";
                     ulangi = false;
                     break;
                 default:
