@@ -24,14 +24,10 @@ public class PostTest2 {
             System.out.print("Masukkan Kode Tujuan (JGJ, SMR, JKT)\t: ");
             kodeTujuan = read.nextLine().toUpperCase();
 
-            switch (kodeTujuan) {
-                case "JGJ":
-                case "SMR":
-                case "JKT":
-                    ulangi = false;
-                    break;
-                default:
-                    System.out.println("[EROR] Kode Tujuan tidak dikenali!");
+            if (kodeTujuan.equals("JGJ") || kodeTujuan.equals("SMR") || kodeTujuan.equals("JKT")) {
+                ulangi = false;
+            } else {
+                System.out.println("[EROR] Kode Tujuan tidak dikenali!\n");
             }
         } while (ulangi);
 
@@ -41,14 +37,10 @@ public class PostTest2 {
             System.out.print("Masukkan Kode Paket (S / K / R)\t\t\t: ");
             kodePaket = read.nextLine().toUpperCase();
 
-            switch (kodePaket) {
-                case "S":
-                case "K":
-                case "R":
-                    ulangi = false;
-                    break;
-                default:
-                    System.out.println("[EROR] Kode Paket tidak dikenali!");
+            if (kodePaket.equals("S") || kodePaket.equals("K") || kodePaket.equals("R")) {
+                ulangi = false;
+            } else {
+                System.out.println("[EROR] Kode Tujuan tidak dikenali!\n");
             }
         } while (ulangi);
 
