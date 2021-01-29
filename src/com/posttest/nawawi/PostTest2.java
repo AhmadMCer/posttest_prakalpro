@@ -1,14 +1,15 @@
 package com.posttest.nawawi;
 import java.util.Scanner;
 
-public class PostTest {
+public class PostTest2 {
     public static void main(String[] args) {
         // Inisiasi scanner
         Scanner read = new Scanner(System.in);
 
         // Inisiasi variabel
-        String namaPetugas, namaPelanggan, kodeTujuan, kodePaket, tanggalKeberangkatan;
+        String namaPetugas, namaPelanggan, kodeTujuan = "", kodePaket = "", tanggalKeberangkatan, input;
         float harga = 0, biayaPajak = 0, totalBiaya = 0;
+        boolean ulangi;
 
         // Bagian Input
         System.out.println("===> Struk Pembayaran Terminal Jaya <===\n");
@@ -16,10 +17,56 @@ public class PostTest {
         namaPetugas = read.nextLine();
         System.out.print("Masukkan Nama Pelangan\t\t\t\t\t: ");
         namaPelanggan = read.nextLine();
-        System.out.print("Masukkan Kode Tujuan (JGJ, SMR, JKT)\t: ");
-        kodeTujuan = read.nextLine().toUpperCase();
-        System.out.print("Masukkan Kode Paket (S / K / R)\t\t\t: ");
-        kodePaket = read.nextLine().toUpperCase();
+
+        do {
+            ulangi = true;
+
+            System.out.print("Masukkan Kode Tujuan (JGJ, SMR, JKT)\t: ");
+            input = read.nextLine().toUpperCase();
+
+            switch (input) {
+                case "JGJ":
+                    kodeTujuan = "JGJ";
+                    ulangi = false;
+                    break;
+                case "SMR":
+                    kodeTujuan = "SMR";
+                    ulangi = false;
+                    break;
+                case "JKT":
+                    kodeTujuan = "JKT";
+                    ulangi = false;
+                    break;
+                default:
+                    System.out.println("[EROR] Kode Tujuan tidak dikenali!");
+            }
+        } while (ulangi);
+
+        do {
+            ulangi = true;
+
+            System.out.print("Masukkan Kode Paket (S / K / R)\t\t\t: ");
+            input = read.nextLine().toUpperCase();
+
+            switch (input) {
+                case "S":
+                    kodePaket = "S";
+                    ulangi = false;
+                    break;
+                case "K":
+                    kodePaket = "K";
+                    ulangi = false;
+                    break;
+                case "R":
+                    kodePaket = "R";
+                    ulangi = false;
+                    break;
+                default:
+                    System.out.println("[EROR] Kode Paket tidak dikenali!");
+            }
+        } while (ulangi);
+
+
         System.out.print("Masukkan Tanggal Keberangkatan\t\t\t: ");
         tanggalKeberangkatan = read.nextLine();
 
